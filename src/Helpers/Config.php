@@ -4,9 +4,8 @@ declare(strict_types = 1); //No hidden casting!!!
 
 namespace App\Helpers;
 
-use App\Exception\NotFoundException;
-use http\Exception\RuntimeException;
-use PHPUnit\Logging\Exception;
+use App\Exceptions\NotFoundException;
+use Throwable;
 
 class Config
 {
@@ -35,12 +34,13 @@ class Config
                 $fileContent = require $path;
             }
 //        }catch (\Exception $exception)
-        }catch (\Throwable $exception)  //Throwable implements Exception, so Higher level!!!
+        }catch (Throwable $exception)  //Throwable implements Exception, so Higher level!!!
         {//It helps to catch Fatat Errors
 //            die($exception->getMessage());
 //            throw new RuntimeException(
             throw new NotFoundException(
-                sprintf('Specified file %s was not found', $filename)
+                sprintf('Specified file %s was not found', $filename),
+                ['not found file', 'data is passed'] //extra parameter that is defined in custom exception
             );
         }
         return $fileContent;
