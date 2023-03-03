@@ -1,20 +1,18 @@
 {
-    "platform":{
-      "php":"8.2.0"
-  },
-  "name": "php/oop",
-  "description": "description",
-  "type": "project",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "a764010",
-      "email": "email@example.com"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "" : "src"
-    }
-  }
+    "name": "logger/oop",
+    "description": "oop",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "",
+            "email": "example@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "":"src"
+        }
+    },
+    "require": {}
 }

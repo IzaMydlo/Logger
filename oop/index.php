@@ -1,12 +1,7 @@
 <?php
 
-use App\Student;
+require_once 'parseform.php';
 
-//NOT OK to Load classes in a big project
-//spl_autoload_register(function ($className){  //autoloading feature
-//    $class_name_array = explode('\\', $className);
-//    var_dump($class_name_array);exit;
-//    include 'src/' .end($class_name_array). '.php';
-//});
+require_once 'form.php';
 
-new Student();
+
