@@ -1,6 +1,6 @@
 {
     "platform":{
-      "php":"8.0"
+      "php":"8.2.0"
   },
   "name": "php/oop",
   "description": "description",
@@ -16,8 +16,5 @@
     "psr-4": {
       "App\\" : "src"
     }
-  },
-  "require": {
-
   }
 }
