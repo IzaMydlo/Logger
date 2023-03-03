@@ -2,10 +2,15 @@
 declare(strict_types = 1);
 
 
-require_once __DIR__.'/vendor/autoload.php';
+use App\Exceptions\ExceptionHandler;
+use App\Helpers\Config;
 
-set_exception_handler([new \App\Exceptions\ExceptionHandler(), 'handle']);
-$config = \App\Helpers\Config::getFileContent('file');
+require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/src/Exceptions/exception.php';
+
+
+$db = new mysqli('qwe', 'qwe', 'qwe,', 'qwe');
+$config = Config::getFileContent('file');
 var_dump($config);
 
 $application = new \App\Helpers\App();

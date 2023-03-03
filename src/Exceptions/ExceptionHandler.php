@@ -1,8 +1,10 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Exceptions;
 
 use App\Helpers\App;
+use ErrorException;
 use Throwable;
 
 class ExceptionHandler
@@ -18,5 +20,14 @@ class ExceptionHandler
             echo 'We found an error. Please try again later';
         }
         exit;
+    }
+
+    /**
+     * @throws ErrorException
+     */
+    public function convertWarningAndNoticesToException($severity, $message, $file, $line)
+    {
+        throw new ErrorException($message, $severity, $severity, $file, $line);
+
     }
 }
