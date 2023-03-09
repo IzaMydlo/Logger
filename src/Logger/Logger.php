@@ -5,7 +5,7 @@ namespace App\Logger;
 use App\Helpers\App;
 use ReflectionClass;
 use App\Contracts\LoggerInterface;
-use Exceptions\InvalidLogLevelArgument;
+use App\Exceptions\InvalidLogLevelArgument;
 
 class Logger implements LoggerInterface
 {
