@@ -27,7 +27,7 @@ class App
     {
         if(!isset($this->config['env']))
             return 'production';
-        return $this->config['env'];
+        return $this->isTestMode() ? 'test' : $this->config['env'];
     }
 
     /**
@@ -51,4 +51,11 @@ class App
     {
         return new DateTime('now', new DateTimeZone('Europe/Berlin'));
     }
+
+    public function isTestMode() :bool{
+        if($this->isRunningFromConsole() && defined('PHPUNIT_RUNNING') && PHPUNIT_RUNNING)
+            return true;
+    return false;
+    }
+
 }
